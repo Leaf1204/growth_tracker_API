@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: growthTracker_api_production
-  username: growthTracker_api
-  password: <%= ENV['GROWTHTRACKER_API_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DBURI'] %>
