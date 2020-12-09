@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dateOf: 2020-12-09
+  weight: 9.99
+  note: MyText
+
+two:
+  dateOf: 2020-12-09
+  weight: 9.99
+  note: MyText

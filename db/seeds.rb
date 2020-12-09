@@ -5,4 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create(username: "leanneF", password: "Zen")
+#user = User.create(username: "leanneF", password: "Zen")
+
+Child.create([
+    { name: 'Zen', dob: 10/28/2016, gender: "female" }
+])
+
+Milestone.create([
+    { dateOf: 10/28/2016, weight: 3.375, note: "was born"}
+])
+
+puts "seeded database"
