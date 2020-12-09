@@ -1,5 +1,6 @@
 class MilestonesController < ApplicationController
   before_action :set_milestone, only: [:show, :update, :destroy]
+  before_action :authorized
 
   # GET /milestones
   def index
@@ -16,7 +17,8 @@ class MilestonesController < ApplicationController
   # POST /milestones
   def create
     @milestone = Milestone.new(milestone_params)
-
+    @milestone.child = @child
+    
     if @milestone.save
       render json: @milestone, status: :created, location: @milestone
     else
