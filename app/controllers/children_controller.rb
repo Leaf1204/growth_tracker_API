@@ -1,9 +1,10 @@
 class ChildrenController < ApplicationController
   before_action :set_child, only: [:show, :update, :destroy]
+  before_action :authorized
 
   # GET /children
   def index
-    @children = Child.all
+    @children = Child.where user: @user.id
 
     render json: @children
   end
@@ -16,6 +17,7 @@ class ChildrenController < ApplicationController
   # POST /children
   def create
     @child = Child.new(child_params)
+    @child.user = @user
 
     if @child.save
       render json: @child, status: :created, location: @child
