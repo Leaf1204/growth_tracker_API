@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :children
+  resources :weights
+  resources :genders
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resource :users, only: [:create]
   post "/login", to: "users#login"
