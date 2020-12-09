@@ -1,9 +1,0 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  dateOf: 2020-12-08
-  value: 9.99
-
-two:
-  dateOf: 2020-12-08
-  value: 9.99
