@@ -16,9 +16,13 @@ class MilestonesController < ApplicationController
 
   # POST /milestones
   def create
+    p params
     @milestone = Milestone.new(milestone_params)
+    child_id = params['childid']
+    @child = Child.find(child_id)
     @milestone.child = @child
     
+
     if @milestone.save
       render json: @milestone, status: :created, location: @milestone
     else
@@ -28,6 +32,9 @@ class MilestonesController < ApplicationController
 
   # PATCH/PUT /milestones/1
   def update
+    child_id = params['childid']
+    @child = Child.find(child_id)
+    @milestone.child = @child
     if @milestone.update(milestone_params)
       render json: @milestone
     else
