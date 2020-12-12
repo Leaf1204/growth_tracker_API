@@ -4,7 +4,7 @@ class MilestonesController < ApplicationController
 
   # GET /milestones
   def index
-    @milestones = Milestone.where child: @child.id
+    @milestones = Milestone.all
 
     render json: @milestones.to_json(include: :child)
   end
